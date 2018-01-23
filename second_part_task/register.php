@@ -30,8 +30,8 @@
 					'min' => 3,
 					'max' => 30
 				)
-			));	
-
+			));				
+             
 			if($validation->passed()) {
 				$user = new User();
 				try {					
@@ -39,11 +39,10 @@
 						'email' => Input::get('email'),
 						'password' => Hash::make(Input::get('password')),
 						'name' => Input::get('name'),
-						'surname' => Input::get('surname'),
-						'status' => 0
+						'surname' => Input::get('surname')						
 				));
 
-				// sortout Session::flash('home', 'You have been registered and now you can log in');
+				// sortout Session::flash('home', 'You have been registered and now you can log in');				
 				Redirect::to('login.php');
 			
 				} catch(Exception $e) {
